@@ -3,7 +3,6 @@
 // found in the LICENSE file.
 // extract from chromium source code by @liuwayong
 
-const HOST_URL = process.env.URL;
 var url = new URL(location.href);
 var playerid = url.searchParams.get("id");
 
@@ -2138,7 +2137,7 @@ var playerid = url.searchParams.get("id");
 
             // Submit highscore to Telegram
             var xmlhttp = new XMLHttpRequest();
-            var url = HOST_URL + "/highscore/" + distance  +
+            var url = "https://tgb-t-rex.onrender.com//highscore/" + distance  +
             "?id=" + playerid;
             xmlhttp.open("GET", url, true);
             xmlhttp.send();

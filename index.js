@@ -7,7 +7,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const TOKEN = process.env.BOT_TOKEN;
-const HOST_URL = process.env.URL;
 
 const server = express();
 const bot = new TelegramBot(TOKEN, { polling: true });
@@ -34,7 +33,7 @@ bot.on("callback_query", function (query) {
     );
   } else {
     queries[query.id] = query;
-    let gameurl = HOST_URL + "/index.html?id=" + query.id;
+    let gameurl = "https://tgb-t-rex.onrender.com//index.html?id=" + query.id;
     bot.answerCallbackQuery(query.id, {
       callback_query_id: query.id,
       url: gameurl,
